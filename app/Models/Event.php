@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     use HasFactory;
+    protected $table = "events";
+
+    public function dichvu_sd(){
+        return $this->belongsTo(Dichvu::class,'dichvusd','id');
+     }
 }

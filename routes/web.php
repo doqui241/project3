@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\TicketController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,10 +13,20 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('index');
+Route::controller(TicketController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::post('/pay', 'pay')->name('pay');
 });
-Route::get('/event', function () {
-    return view('event');
+Route::controller(EventController::class)->group(function () {
+    Route::get('/event', 'index')->name('events.event');
+    Route::get('/detail_event/{id}', 'show')->name('event.show');
+});
+
+
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/contact', function () {
+    return view('contact');
 });

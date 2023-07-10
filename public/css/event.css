@@ -7,7 +7,7 @@
     color: #fff;
     letter-spacing: 0em;
     line-height: 1.2;
-    margin-top: -150px;
+    margin-top: -140px;
 }
 
 #event-detail-name {
@@ -26,6 +26,7 @@
     position: absolute;
     top: 220px;
     width: 100%;
+    display: flex;
 }
 
 .box-item {
@@ -83,4 +84,14 @@
     line-height: 60px;
     font-size: 32px;
     font-weight: 700;
+}
+
+#detail_event{
+    margin-top: 150px;
+    background-color: #fff6d4;
+    border-radius: 10px;
+    border: 3px dashed #ffb489;
+    min-height: 400px;
+    padding: 10px;
+    
 }

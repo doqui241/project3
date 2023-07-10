@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_ticket');
+            $table->foreign('id_ticket')->references('id')->on('tickets');
+            $table->decimal('total_price');
+            $table->date('date_order');
+            $table->string('name');
+            $table->string('sdt');
+            $table->string('email');
+            $table->string('quantity');
             $table->timestamps();
         });
     }
