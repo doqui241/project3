@@ -7,25 +7,27 @@
         <div class="row form-contact ">
             <div class="col-8 m-0">
                 <div class="row p-2" id="content-form">
-                    <form action="" method="post" class="p-3">
+                    <form action="/guilienhe" method="post" class="p-3">
+                        @csrf
                         <label for="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac mollis
                             justo. Etiam volutpat tellus quis risus volutpat, ut posuere ex facilisis. </label>
                         <div class="row mb-3 mt-3">
-                            <div class="col-4"><input type="text" class="form-control" placeholder="Tên"></div>
-                            <div class="col-8"><input type="text" class="form-control" placeholder="Email"></div>
+                            <div class="col-4"><input type="text" class="form-control" name="ten" placeholder="Tên"></div>
+                            <div class="col-8"><input type="text" class="form-control" name="email" placeholder="Email"></div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-4"><input type="text" class="form-control" placeholder="Số điện thoại">
+                            <div class="col-4"><input type="text" class="form-control" name="sdt" placeholder="Số điện thoại">
                             </div>
-                            <div class="col-8"><input type="text" class="form-control" placeholder="Địa chỉ"></div>
+                            <div class="col-8"><input type="text" class="form-control" name="diachi" placeholder="Địa chỉ"></div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-12">
-                                <textarea name="" class="form-control" placeholder="Nhập lời nhắn" rows="4"></textarea>
+                                {{-- <textarea class="form-control" placeholder="Nhập lời nhắn" name="nd" rows="4"></textarea> --}}
+                                <textarea class="col-md-9 form-control" name="nd" rows="4" placeholder="Nhập lời nhắn"></textarea>
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-center w-50 m-auto">
-                            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
+                            <button type="submit" class="btn btn-primary mt-3" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 Gửi liên hệ
                             </button>
@@ -73,4 +75,23 @@
             </div>
         </div>
     </div>
+    @if(isset($adminEmail))
+
+    <div class="tb-lh ">
+        <button> <span id="close" onclick="this.parentNode.parentNode.remove(); return false;">x</span></button>
+        
+        <div class="alert alert-info p-3 h2 text-center" style="z-index: 99999">
+          
+           
+            <p> Gửi liên hệ thành công.
+                Vui lòng kiên nhẫn đợi phản hồi từ chúng tôi, bạn nhé!</p>
+           
+        </div>
+        <div class="lh">
+
+        </div>
+    </div>
+
+                      
+                            @endif
 @endsection

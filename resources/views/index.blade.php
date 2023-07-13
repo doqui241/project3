@@ -5,7 +5,6 @@
     <div class="row infomation-form-container">
         
         <div class="col-8 infomation-item">
-            
             <div id="index-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ac mollis justo. 
                     Etiam volutpat tellus quis risus volutpat, ut posuere ex facilisis. <br> <br>
