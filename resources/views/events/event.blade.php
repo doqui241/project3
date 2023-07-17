@@ -1,7 +1,10 @@
 @extends('layuot.master')
 @section('content')
 <div class="main-content">
-
+    <img src="https://res.cloudinary.com/dbgqqupsw/image/upload/v1688568499/Frame_entzej.svg" alt=""
+    style="position: absolute; top: 10%; left: 0;width:30%">
+    <img src="https://res.cloudinary.com/dbgqqupsw/image/upload/v1688568500/Frame2_hrfrrk.svg" alt=""
+    style="position: absolute; top: 2%; right: 0;width:30%">
     <div class="row infomation-form-container">
         <p id="event-name">Sự kiện nổi bật</p>
     </div>

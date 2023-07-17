@@ -15,8 +15,12 @@ use App\Mail\GuiEmail;
 |
 */
 Route::controller(TicketController::class)->group(function () {
-    Route::get('/', 'index');
+    Route::get('/', 'index')->name('index');
     Route::post('/pay', 'pay')->name('pay');
+    Route::post('/checkout', 'checkout')->name('checkout');
+    Route::post('/save', 'save')->name('save');
+    Route::get('/success', 'success')->name('success');
+    
 });
 Route::controller(EventController::class)->group(function () {
     Route::get('/event', 'index')->name('events.event');
@@ -33,16 +37,11 @@ Route::post("/guilienhe", function(Illuminate\Http\Request $request){
     $sdt = trim(strip_tags( $arr['sdt'] ));
     $diachi = trim(strip_tags( $arr['diachi'] ));
     $nd = trim(strip_tags( $arr['nd'] ));
-    $adminEmail = 'doqui241@gmail.com'; //Gửi thư đến ban quản trị
+    $adminEmail = $email; //Gửi thư đến ban quản trị
     Mail::mailer('smtp')->to( $adminEmail )
     ->send( new GuiEmail($ten, $email,$sdt,$diachi, $nd) );
     
     return view('contact')->with(['adminEmail' => $adminEmail]);
-    //  return redirect("thongbao"); 
-  });
-  Route::get("/thongbao", function(Illuminate\Http\Request $request){ 
-    $tb = $request->session()->get('thongbao');
-    return view('thongbao',['thongbao'=> $tb]); 
   });
 
 

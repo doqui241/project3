@@ -1,20 +1,24 @@
 @extends('layuot.master')
 @section('content')
 <div class="infomation-form-container mt-2">
+    <img src="https://res.cloudinary.com/dpobeimdp/image/upload/v1688357579/Trini_Arnold_Votay1_2_nu5go9.svg"
+    id="bfp-context">
     <p id="event-name">Thanh toán</p>
+  
 </div>
-<form action="" method="post" class="row infomation-form-container " style="top:200px;">
+<form action="{{route('checkout')}}" method="post" class="row infomation-form-container " style="top:200px;">
     @csrf
     <div class="col-8 infomation-item">
-        <div id="index-content" class="bfp-p">
+        <div id="index-content" class="bfp-p" >
+            <input type="hidden" name="id_ticket" value="{{$data['id_ticket']}}">
             <div class="form-caption-container form-caption-container1">
-                <div class="form-caption text-center p-2 text-white"></div>
+                <div class="form-caption text-center p-2 text-white">{{ $data['name_ticket']}}</div>
             </div>
             <div class="row">
                 <div class="mb-3 col-5">
                     <label for="total_price" class="form-label">Số tiền thanh toán</label>
                     <input readonly type="text" class="form-control" name="total_price" id="total_price"
-                        value="">
+                        value="{{  number_format($data['total_price'], 0, ',', '.')}}VND">
                 </div>
                 <div class="mb-3 col-2">
                     <label for="quantity" class="form-label">Số vé</label>
@@ -37,7 +41,7 @@
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Điện thoại</label>
-                <input readonly type="text" class="form-control" name="phone" id="phone"
+                <input readonly type="text" class="form-control" name="sdt" id="phone"
                     value="{{ $data['sdt'] }}">
             </div>
             <div class="mb-3">
@@ -69,7 +73,7 @@
                 <input type="password" class="form-control" name="" id="card_cvv_cvc">
             </div>
             <div class="d-flex align-items-center justify-content-center pb-2">
-                <button class="btn btn-primary" type="submit">Thanh
+                <button class="btn btn-primary" type="submit" name="redirect">Thanh
                     toán</button>
             </div>
         </div>

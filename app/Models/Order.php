@@ -17,6 +17,7 @@ class Order extends Model
         'sdt',
         'email',
         'quantity',
+        'session_id',
     ];
 
     public function id_tickets(){

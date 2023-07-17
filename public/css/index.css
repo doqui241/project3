@@ -158,11 +158,10 @@ li {
 
 
 #bfp-context {
-    width: 12%;
+    width: 20%;
     position: absolute;
-    bottom: 60px;
     z-index: 1000;
-    left: 50px;
+    left: -200px;
 }
 
 .btn {
@@ -194,4 +193,64 @@ li {
 
 .link-custom:hover {
     color: rgb(255, 244, 225);
+}
+
+#context1 {
+    width: 15%;
+    position: absolute;
+    bottom: 18px;
+    z-index: 1000;
+    left: 10px;
+}
+
+#context2 {
+    position: absolute;
+    top: 200px;
+    z-index: 1000;
+    left: 10px;
+}
+
+#context3 {
+    position: absolute;
+    bottom: 0px;
+    z-index: -1000;
+    left: 50%;
+}
+
+#context4 {
+    position: absolute;
+    top: 100px;
+    z-index: -1000;
+    left: 38%;
+}
+
+#context5 {
+    position: absolute;
+    top: 80px;
+    z-index: -1000;
+    left: 50%;
+}
+
+#context6 {
+    width: 40%;
+    position: absolute;
+    top: 10px;
+    z-index: -1000;
+    right: 6%;
+}
+
+#context7 {
+    width: 8%;
+    position: absolute;
+    top: 40%;
+    z-index: -1000;
+    right: 0;
+}
+
+#context8 {
+    width: 8%;
+    position: absolute;
+    bottom: 10px;
+    z-index: -1000;
+    right: 6%;
 }

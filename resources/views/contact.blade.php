@@ -1,6 +1,8 @@
 @extends('layuot.master')
 @section('content')
    <div style="height: 500px">
+    <img src="https://res.cloudinary.com/dpobeimdp/image/upload/v1688372713/Alex_AR_Lay_Do_shadow_1_fv9ypm.svg"
+    style="position: absolute; bottom: 10%; left:-10px; z-index: 999; width: 14%">
         <div class="infomation-form-container mt-2">
             <p id="event-name">Liên hệ</p>
         </div>
